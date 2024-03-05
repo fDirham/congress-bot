@@ -7,7 +7,6 @@ import { join } from "path";
 import { getOutFolderHouse } from "./custom_helpers_js/getPaths.js";
 import { downloadFile } from "./custom_helpers_js/downloaders.js";
 import {
-  cleanTextNonAscii,
   getPercentageString,
   timeoutPromise,
 } from "./custom_helpers_js/utilities.js";
@@ -15,7 +14,7 @@ import {
 const main = async () => {
   // Process input arguments
   const argv = yargs(hideBin(process.argv)).argv;
-  let { year, skipGetInfoList, downloadStartIndex } = argv;
+  let { year, skipGetInfoList, skipDownloadDocs, downloadStartIndex } = argv;
 
   if (!year) {
     console.log("Invalid inputs");
@@ -41,6 +40,17 @@ const main = async () => {
     const getRes = await axios.post(API_URL, form);
 
     const $ = cheerio.load(getRes.data);
+
+    function processListedName(inName) {
+      let newName = inName.toUpperCase();
+      newName = newName.replace("HON.", " ");
+      newName = newName.replace(/\.+/g, " ");
+      newName = newName.replace(/ +/g, " ");
+      const nameParts = newName.split(",");
+      const lastName = nameParts[0].trim();
+      const firstName = nameParts[1].trim();
+      return [lastName, firstName];
+    }
 
     $("tr").each(function () {
       const toAdd = {};
@@ -69,12 +79,9 @@ const main = async () => {
       }
 
       // Split last name first name
-      let newName = toAdd.listedName;
-      newName = newName.replace("Hon..", "");
-      newName = newName.replace("HON.", "");
-      const nameParts = newName.split(",");
-      toAdd.lastName = nameParts[0].trim();
-      toAdd.firstName = nameParts[1].trim();
+      const [lastName, firstName] = processListedName(toAdd.listedName);
+      toAdd.lastName = lastName;
+      toAdd.firstName = firstName;
 
       // Get doc id
       let docId = docUrl;
@@ -97,57 +104,67 @@ const main = async () => {
   }
 
   // Download pdfs
-  const DOWNLOAD_DELAY = 500;
+  if (!skipDownloadDocs) {
+    const DOWNLOAD_DELAY = 500;
 
-  function getDocFileName(obj) {
-    let { firstName, lastName, office, filingYear, docId } = obj;
-
-    firstName = cleanTextNonAscii(firstName);
-    lastName = cleanTextNonAscii(lastName);
-
-    return [filingYear, office, lastName, firstName, docId].join("_") + ".pdf";
-  }
-
-  function getUrlFromObj(obj) {
-    return BASE_URL + `public_disc/ptr-pdfs/${year}/${obj.docId}.pdf`;
-  }
-
-  let startIndex = 0;
-  if (downloadStartIndex) {
-    startIndex = parseInt(downloadStartIndex) || 0;
-  }
-
-  const failedList = [];
-  for (let i = startIndex; i < infoList.length; i++) {
-    const obj = infoList[i];
-    const toDownloadUrl = getUrlFromObj(obj);
-    const savePath = join(DOCUMENTS_FOLDER_PATH, getDocFileName(obj));
-
-    console.log("Downloading", i, toDownloadUrl);
-
-    try {
-      await downloadFile(toDownloadUrl, savePath);
-      console.log(
-        "Finished",
-        i,
-        getPercentageString(i + 1, startIndex, infoList.length)
-      );
-      console.log(savePath);
-      if (DOWNLOAD_DELAY) {
-        await timeoutPromise(DOWNLOAD_DELAY);
-      }
-    } catch (error) {
-      console.error(error);
-      console.error("ERROR", i, toDownloadUrl);
-      failedList.push({
-        runIndex: i,
-        toDownloadUrl,
-      });
+    function processNameForFile(inName) {
+      inName = inName.replace(/ /g, "-");
+      inName = inName.replace(/\"/g, "");
+      return inName;
     }
-  }
 
-  if (failedList.length) {
-    writeFileSync(ERROR_DOWNLOAD_FILE_PATH, JSON.stringify(failedList));
+    function getDocFileName(obj) {
+      let { firstName, lastName, office, filingYear, docId } = obj;
+
+      firstName = processNameForFile(firstName);
+      lastName = processNameForFile(lastName);
+
+      return (
+        [filingYear, office, lastName, firstName, docId].join("_") + ".pdf"
+      );
+    }
+
+    function getUrlFromObj(obj) {
+      return BASE_URL + `public_disc/ptr-pdfs/${year}/${obj.docId}.pdf`;
+    }
+
+    let startIndex = 0;
+    if (downloadStartIndex) {
+      startIndex = parseInt(downloadStartIndex) || 0;
+    }
+
+    const failedList = [];
+    for (let i = startIndex; i < infoList.length; i++) {
+      const obj = infoList[i];
+      const toDownloadUrl = getUrlFromObj(obj);
+      const savePath = join(DOCUMENTS_FOLDER_PATH, getDocFileName(obj));
+
+      console.log("Downloading", i, toDownloadUrl);
+
+      try {
+        await downloadFile(toDownloadUrl, savePath);
+        console.log(
+          "Finished",
+          i,
+          getPercentageString(i + 1, startIndex, infoList.length)
+        );
+        console.log(savePath);
+        if (DOWNLOAD_DELAY) {
+          await timeoutPromise(DOWNLOAD_DELAY);
+        }
+      } catch (error) {
+        console.error(error);
+        console.error("ERROR", i, toDownloadUrl);
+        failedList.push({
+          runIndex: i,
+          toDownloadUrl,
+        });
+      }
+    }
+
+    if (failedList.length) {
+      writeFileSync(ERROR_DOWNLOAD_FILE_PATH, JSON.stringify(failedList));
+    }
   }
 };
 

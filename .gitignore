@@ -3,3 +3,5 @@ outFiles/
 .env
 tmp
 tmp*
+.venv/
+__pycache__
