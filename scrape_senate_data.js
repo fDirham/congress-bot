@@ -11,6 +11,7 @@ import { join } from "path";
 import UserAgent from "user-agents";
 import { getOutFolderSenate } from "./custom_helpers_js/getPaths.js";
 import { readFileSync, writeFileSync } from "fs";
+import { downloadFile } from "./custom_helpers_js/downloaders.js";
 
 const main = async () => {
   // Process input arguments
@@ -28,16 +29,13 @@ const main = async () => {
     year + "-info-list.json"
   );
   const DOCUMENTS_FOLDER_PATH = join(getOutFolderSenate(), "documents");
-  const ERROR_DOWNLOAD_FILE_PATH = join(
-    getOutFolderSenate(),
-    year + "-download-errors.json"
-  );
 
   // Run constants
   const NAV_TIMEOUT = 30 * 1000;
   const SIZE_SET_DELAY = 2 * 1000;
   const NEXT_PAGE_DELAY = 2 * 1000;
   const PAGE_SIZE = 100;
+  const DOWNLOAD_DELAY = 500;
 
   // Puppeteer initializers
   const initializeBrowser = async () => {
@@ -78,16 +76,20 @@ const main = async () => {
     browser.close();
   });
 
+  // Get necessary cookies and states for page
+  const SEARCH_PAGE_URL = "https://efdsearch.senate.gov/search/";
+  await page.goto(SEARCH_PAGE_URL);
+
+  // Click agree
+  await page.click('input#agree_statement[value="1"]');
+
+  // Wait for start
+  const ptrSelector = 'input#reportTypes[value="11"]';
+  await page.waitForSelector(ptrSelector);
+
+  let infoList = [];
   if (!skipGetInfoList) {
-    const SEARCH_PAGE_URL = "https://efdsearch.senate.gov/search/";
-    await page.goto(SEARCH_PAGE_URL);
-
-    // Click agree
-    await page.click('input#agree_statement[value="1"]');
-
-    // Select PTR
-    const ptrSelector = 'input#reportTypes[value="11"]';
-    await page.waitForSelector(ptrSelector);
+    // Select ptr filing type
     await page.click(ptrSelector);
 
     // Input years
@@ -131,7 +133,6 @@ const main = async () => {
     const numPages = Math.ceil(numEntries / PAGE_SIZE);
 
     // Sift through pages
-    const infoList = [];
     for (let i = 0; i < numPages; i++) {
       console.log(
         "Processing page",
@@ -150,12 +151,101 @@ const main = async () => {
     }
 
     writeFileSync(INFO_LIST_FILE_PATH, JSON.stringify(infoList));
+  } else {
+    const infoListFileContents = readFileSync(INFO_LIST_FILE_PATH, {
+      encoding: "utf-8",
+    });
+    infoList = JSON.parse(infoListFileContents);
+  }
+
+  if (!skipDownloadDocs) {
+    function processNameForFile(inName) {
+      inName = inName.toUpperCase();
+      inName = inName.replace(/[^\w\s]/gi, "");
+      inName = inName.replace(/ /g, "-");
+      return inName;
+    }
+
+    const createFilenameFromObj = (obj) => {
+      let { firstName, lastName, docUrl } = obj;
+
+      firstName = processNameForFile(firstName);
+      lastName = processNameForFile(lastName);
+
+      const docId = docUrl
+        .replace("/search/view/paper/", "")
+        .replace("/search/view/ptr/", "")
+        .replace("/", "");
+
+      return [year, lastName, firstName, docId].join("_");
+    };
+
+    let startIndex = 0;
+    if (downloadStartIndex) {
+      startIndex = parseInt(downloadStartIndex) || 0;
+    }
+
+    for (let i = startIndex; i < infoList.length; i++) {
+      const obj = infoList[i];
+      const urlToDownload = "https://efdsearch.senate.gov" + obj.docUrl;
+      const isFormattedPtr = urlToDownload.includes("/ptr/");
+      console.log(
+        "Downloading",
+        i,
+        getPercentageString(i + 1, startIndex, infoList.length)
+      );
+      console.log(urlToDownload);
+
+      await page.goto(urlToDownload);
+      if (isFormattedPtr) {
+        await page.waitForSelector("tbody tr td");
+        const ptrResults = await page.evaluate(evaluatePtrPage);
+        // Save JSON
+        const savePath = join(
+          DOCUMENTS_FOLDER_PATH,
+          createFilenameFromObj(obj) + ".json"
+        );
+        writeFileSync(savePath, JSON.stringify(ptrResults));
+      } else {
+        // Grab all image srcs
+        await page.waitForSelector("img.filingImage");
+        const imgUrls = await page.evaluate(evaluatePaperPage);
+
+        // Save list
+        const imageListFilepath = join(
+          DOCUMENTS_FOLDER_PATH,
+          createFilenameFromObj(obj) + "-z-image-list.json"
+        );
+        writeFileSync(imageListFilepath, JSON.stringify(imgUrls));
+
+        // Download
+        await Promise.all(
+          imgUrls.map(async (url, i) => {
+            try {
+              const lastDotIdx = url.lastIndexOf(".");
+              const extension = url.substring(lastDotIdx + 1);
+              const saveFilepath = join(
+                DOCUMENTS_FOLDER_PATH,
+                createFilenameFromObj(obj) + "-" + i + "." + extension
+              );
+              await downloadFile(url, saveFilepath);
+              return saveFilepath;
+            } catch (error) {
+              console.error(error);
+              return error;
+            }
+          })
+        );
+      }
+
+      await timeoutPromise(DOWNLOAD_DELAY);
+    }
   }
 
   process.exit();
 };
 
-const evaluateResults = () => {
+function evaluateResults() {
   const rowElList = document.querySelectorAll("tbody tr");
   const resultList = [];
   rowElList.forEach((rowEl) => {
@@ -174,6 +264,43 @@ const evaluateResults = () => {
     resultList.push(toAdd);
   });
   return resultList;
-};
+}
 
+function evaluatePtrPage() {
+  const resultList = [];
+  document.querySelectorAll("tbody tr").forEach((trEl) => {
+    const rowTdList = [];
+    trEl.querySelectorAll("td").forEach((tdEl) => {
+      rowTdList.push(tdEl.innerText);
+    });
+    const tickerUrlList = [];
+    trEl.querySelectorAll("a").forEach((aTag) => {
+      const href = aTag.getAttribute("href");
+      tickerUrlList.push(href);
+    });
+
+    const toAdd = {
+      transactionDate: rowTdList[1],
+      owner: rowTdList[2],
+      ticker: rowTdList[3],
+      assetName: rowTdList[4],
+      assetType: rowTdList[5],
+      actionType: rowTdList[6],
+      amount: rowTdList[7],
+      comment: rowTdList[8],
+      tickerUrlList: tickerUrlList,
+    };
+
+    resultList.push(toAdd);
+  });
+  return resultList;
+}
+
+function evaluatePaperPage() {
+  const imgSrcList = [];
+  document.querySelectorAll("img.filingImage").forEach((imgEl) => {
+    imgSrcList.push(imgEl.getAttribute("src"));
+  });
+  return imgSrcList;
+}
 main();
