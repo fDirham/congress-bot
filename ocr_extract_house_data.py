@@ -5,10 +5,13 @@ import json
 import re
 from os import listdir
 from os.path import join
-from custom_helpers_py.utilities import delete_folder_contents, remove_non_alphanumeric
+from custom_helpers_py.utilities import get_percentage_string, remove_non_alphanumeric
 from custom_helpers_py.img_helpers import convert_pil_to_opencv_img
 from pdf2image import convert_from_path
 from PIL import Image
+from custom_helpers_py.get_paths import get_out_folder_house
+import argparse
+
 
 # Mention the installed location of Tesseract-OCR in your system
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
@@ -117,7 +120,7 @@ EXTRA_INFO_LINE_VAL = "extra_info"
 LINE_SPLIT_VAL = "--new_line--"
 
 
-def get_content_lines(content: str) -> list[str]:
+def get_content_lines(content: str) -> list[dict]:
     # Try to crop out some lines
     CROP_START_STR_LIST = [
         "GAINS > $200?",
@@ -301,12 +304,14 @@ def ocr_img(pil_img):
 
         COMMON_ERROR_SUBSTRING_DICT = {
             "CIASS": "CLASS",
-            "FITINC": "FILING",
-            "PUBLIICC": "PUBLIC",
             "SUUBHOLDING": "SUBHOLDING",
-            "FIIINC": "FILING",
             "PUBLIICC": "PUBLIC",
+            "PUBLIICC": "PUBLIC",
+            "FITINC": "FILING",
+            "FIIINC": "FILING",
             "FIUINC": "FILING",
+            "FILINC": "FILING",
+            "ST|": "ST]",
         }
 
         for item in COMMON_ERROR_DICT.items():
@@ -323,54 +328,81 @@ def ocr_img(pil_img):
     return im2, extract_obj_list, failed_ocr_list
 
 
+def should_analyze_content(content: str) -> str:
+    content_lines = content.splitlines()
+    if "FILING ID" in content_lines[0] and "PERIODIC TRANS" in content_lines[1]:
+        return True
+    return False
+
+
 def analyze_pdf(pdf_file_path):
     image_list = convert_from_path(pdf_file_path)
-    image_to_analyze = image_list[0]
-    if len(image_list) > 1:
-        doc_height = image_to_analyze.height
-        doc_width = image_to_analyze.width
 
-        new_im = Image.new("RGB", (doc_width, doc_height * len(image_list)))
-        y_offset = 0
-        for im in image_list:
-            new_im.paste(im, (0, y_offset))
-            y_offset += doc_height
-        image_to_analyze = new_im
+    master_failed_ocr_list = []
+    processed_image_list = []
+    master_content_list = []
 
-    img, extract_obj_list, failed_ocr_list = ocr_img(image_to_analyze)
-    raw_content = process_extract_obj_list(extract_obj_list)
-    content_lines = get_content_lines(raw_content)
+    is_dont_analyze = False
+    for i, img_obj in enumerate(image_list):
+        img, extract_obj_list, failed_ocr_list = ocr_img(img_obj)
+        raw_content = process_extract_obj_list(extract_obj_list)
 
-    return (content_lines, raw_content, img, failed_ocr_list)
+        if i == 0 and not should_analyze_content(raw_content):
+            is_dont_analyze = True
+            break
+
+        processed_image_list.append(img)
+        master_failed_ocr_list += failed_ocr_list
+        master_content_list.append(raw_content)
+
+    master_content = "\n".join(master_content_list)
+
+    if is_dont_analyze:
+        content_lines = [{"failed": True, "reason": "Not formatted"}]
+    else:
+        content_lines = get_content_lines(master_content)
+
+    return (content_lines, master_content, processed_image_list, master_failed_ocr_list)
 
 
 def main():
-    BASE_FOLDER_PATH = "./tmp/test_pdfs/"
-    file_names = listdir(BASE_FOLDER_PATH)
+    # Get arguments
+    parser = argparse.ArgumentParser()
 
-    OUT_FOLDER_PATH = "./tmp/ocr_extract_out/"
-    IMAGES_FOLDER_PATH = join(OUT_FOLDER_PATH, "images")
-    FAILED_OCR_FOLDER_PATH = join(OUT_FOLDER_PATH, "failed_ocr")
+    parser.add_argument("-s", "--start-index", type=int)
+    parser.add_argument("-e", "--end-index", type=int)
+    parser.add_argument("--start-year", type=int)
+    args, _ = parser.parse_known_args()
+
+    start_index = args.start_index or 0
+    end_index = args.end_index or -1
+    start_year = args.start_year or 0
+
+    IN_FOLDER_PATH = join(get_out_folder_house(), "documents")
+    file_names = listdir(IN_FOLDER_PATH)
+    if end_index == -1:
+        end_index = len(file_names)
+
+    OUT_FOLDER_PATH = get_out_folder_house()
     RAW_CONTENT_FOLDER_PATH = join(OUT_FOLDER_PATH, "raw_content")
     INFO_EXTRACT_FOLDER_PATH = join(OUT_FOLDER_PATH, "info_extract")
 
-    # Remove all files
-    delete_folder_contents(OUT_FOLDER_PATH)
-    delete_folder_contents(IMAGES_FOLDER_PATH)
-    delete_folder_contents(FAILED_OCR_FOLDER_PATH)
-    delete_folder_contents(RAW_CONTENT_FOLDER_PATH)
-    delete_folder_contents(INFO_EXTRACT_FOLDER_PATH)
-
-    START_IDX = 5
-    END_IDX = 20
+    file_names.sort()
     for i, file_name in enumerate(file_names):
-        if i < START_IDX and i < END_IDX:
+        if i < start_index or i >= end_index:
             continue
 
-        print("Processing", file_name)
-        file_path = join(BASE_FOLDER_PATH, file_name)
+        if start_year:
+            file_year = int(file_name[0:4])
+            if file_year < start_year:
+                continue
 
-        content_lines, raw_content, image, failed_ocr_list = analyze_pdf(file_path)
+        print("Processing", i, file_name)
+        file_path = join(IN_FOLDER_PATH, file_name)
+
+        content_lines, raw_content, processed_image_list, failed_ocr_list = analyze_pdf(
+            file_path
+        )
 
         # Save extract
         info_extract_file_path = join(
@@ -386,25 +418,10 @@ def main():
         with open(raw_content_file_path, "w", encoding="utf-8") as outfile:
             outfile.write(raw_content)
 
-        # Save image
-        image_file_path = join(IMAGES_FOLDER_PATH, file_name.replace("pdf", "png"))
-        cv2.imwrite(image_file_path, image)
+        print("Done", i, file_name)
 
-        # Failed list
-        for i, obj in enumerate(failed_ocr_list):
-            shape = obj[0].shape
-            coords = obj[2]
-
-            failed_name = file_name.replace(".pdf", "") + "_" + str(i)
-            failed_path = join(FAILED_OCR_FOLDER_PATH, failed_name)
-
-            to_write = str(shape) + "\n" + str(coords) + obj[1]
-            with open(failed_path + "_shape.txt", "w") as outfile:
-                outfile.write(to_write)
-
-            cv2.imwrite(failed_path + ".png", obj[0])
-
-        print("Done", file_name)
+        pct = get_percentage_string(i + 1, start_index, end_index)
+        print(pct)
 
 
 if __name__ == "__main__":
