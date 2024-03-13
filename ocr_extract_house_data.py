@@ -268,7 +268,7 @@ def ocr_img(pil_img):
     im2 = img.copy()
 
     extract_obj_list: list[tuple[str, tuple[int, int]]] = []
-    failed_ocr_list: list = []
+    # failed_ocr_list: list = []
     for cnt in contours:
         x, y, w, h = cv2.boundingRect(cnt)
 
@@ -291,8 +291,8 @@ def ocr_img(pil_img):
             if len(text) > 2:
                 text = ""
 
-            if not text:
-                failed_ocr_list.append((cropped, text, (x, y)))
+            # if not text:
+            # failed_ocr_list.append((cropped, text, (x, y)))
 
         # Convert text to uppercase
         text = text.upper()
@@ -325,7 +325,7 @@ def ocr_img(pil_img):
         if text:
             extract_obj_list.append((text, (x, y)))
 
-    return im2, extract_obj_list, failed_ocr_list
+    return extract_obj_list
 
 
 def should_analyze_content(content: str) -> str:
@@ -338,21 +338,17 @@ def should_analyze_content(content: str) -> str:
 def analyze_pdf(pdf_file_path):
     image_list = convert_from_path(pdf_file_path)
 
-    master_failed_ocr_list = []
-    processed_image_list = []
     master_content_list = []
 
     is_dont_analyze = False
     for i, img_obj in enumerate(image_list):
-        img, extract_obj_list, failed_ocr_list = ocr_img(img_obj)
+        extract_obj_list = ocr_img(img_obj)
         raw_content = process_extract_obj_list(extract_obj_list)
 
         if i == 0 and not should_analyze_content(raw_content):
             is_dont_analyze = True
             break
 
-        processed_image_list.append(img)
-        master_failed_ocr_list += failed_ocr_list
         master_content_list.append(raw_content)
 
     master_content = "\n".join(master_content_list)
@@ -362,7 +358,10 @@ def analyze_pdf(pdf_file_path):
     else:
         content_lines = get_content_lines(master_content)
 
-    return (content_lines, master_content, processed_image_list, master_failed_ocr_list)
+    return (
+        content_lines,
+        master_content,
+    )
 
 
 def main():
@@ -400,9 +399,7 @@ def main():
         print("Processing", i, file_name)
         file_path = join(IN_FOLDER_PATH, file_name)
 
-        content_lines, raw_content, processed_image_list, failed_ocr_list = analyze_pdf(
-            file_path
-        )
+        content_lines, raw_content = analyze_pdf(file_path)
 
         # Save extract
         info_extract_file_path = join(
