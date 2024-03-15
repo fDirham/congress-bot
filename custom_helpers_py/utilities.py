@@ -23,3 +23,11 @@ def delete_folder_contents(folder_path):
 def remove_non_alphanumeric(in_str: str, replace_with: str = None) -> str:
     replace_with = replace_with or ""
     return re.sub("[^0-9a-zA-Z]+", replace_with, in_str)
+
+
+def find_all_in_str(text: str, to_find: str):
+    to_return = []
+    for m in re.finditer(to_find, text):
+        to_return.append((m.start(), m.end()))
+
+    return to_return

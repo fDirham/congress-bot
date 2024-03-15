@@ -33,29 +33,8 @@ AMOUNT_RANGE_LIST = [
     ("5,000,001", "25,000,000"),
     ("25,000,001", "50,000,000"),
 ]
-# AMOUNT_RANGE_LIST = []
-# BASE_AMOUNT_RANGE_LIST = [
-#     "$1,001 - $15,000",
-#     "$15,001 - $50,000",
-#     "$50,001 - $100,000",
-#     "$100,001 - $250,000",
-#     "$250,001 - $500,000",
-#     "$500,001 - $1,000,000",
-#     "$1,000,001 - $5,000,000",
-#     "$5,000,001 - $25,000,000",
-#     "$25,000,001 - $50,000,000",
-# ]
-# for amt in BASE_AMOUNT_RANGE_LIST:
-#     to_add_list = [
-#         (amt, amt),
-#         (amt.replace("- ", ""), amt),
-#         (amt.replace("- $", ""), amt),
-#         (amt.replace("$", ""), amt),
-#     ]
-#     for obj in to_add_list:
-#         AMOUNT_RANGE_LIST.append(obj)
 
-ACTION_TYPE_LIST = [" S ", " P ", " E ", " S (PARTIAL) "]
+ACTION_TYPE_LIST = [" S (PARTIAL) ", " S ", " P ", " E "]
 FALLBACK_ACTION_TYPE_LIST = [(" SS ", "S")]
 
 
@@ -148,7 +127,7 @@ def analyze_line(row_content: str) -> dict:
         end_range = obj[1]
 
         if start_range in row_content and end_range in row_content:
-            amount = start_range + " - " + end_range
+            amount = "$" + start_range + " - $" + end_range
             row_content = row_content.replace(start_range, " ").replace(end_range, " ")
             break
 
@@ -159,8 +138,8 @@ def analyze_line(row_content: str) -> dict:
             next_space_index = row_content.find(" ", tmp_idx)
             if next_space_index == -1:
                 next_space_index = len(row_content)
-            print(row_content, tmp_idx, next_space_index)
             amount = row_content[tmp_idx:next_space_index]
+            row_content = row_content.replace(amount, "")
 
     to_return["amount"] = amount
     row_content = row_content.replace("$", " ")
@@ -187,6 +166,7 @@ COMMON_ERROR_SUBSTRING_DICT = {
     "FILINC": "FILING",
     "FIUINE": "FILING",
     "FITINE": "FILING",
+    "FILINGC": "FILING",
     "ST|": "ST]",
     "SUBHOLDING OR": "SUBHOLDING OF",
     "SUBHOLDING O}": "SUBHOLDING OF",
