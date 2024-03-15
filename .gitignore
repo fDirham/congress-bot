@@ -1,7 +1,8 @@
 node_modules/
-outFiles/
+.outFiles/
 .env
 tmp
 tmp*
 .venv/
+.*
 __pycache__

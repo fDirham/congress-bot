@@ -5,10 +5,13 @@ import json
 import re
 from os import listdir
 from os.path import join
-from custom_helpers_py.utilities import get_percentage_string, remove_non_alphanumeric
+from custom_helpers_py.utilities import (
+    get_percentage_string,
+    remove_non_alphanumeric,
+    find_all_in_str,
+)
 from custom_helpers_py.img_helpers import convert_pil_to_opencv_img
 from pdf2image import convert_from_path
-from PIL import Image
 from custom_helpers_py.get_paths import get_out_folder_house
 import argparse
 
@@ -20,16 +23,40 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 OWNER_PREFIX_LIST = ["JT", "DC", "SP"]
 
 AMOUNT_RANGE_LIST = [
-    "$1,001 - $15,000",
-    "$15,001 - $50,000",
-    "$50,001 - $100,000",
-    "$100,001 - $250,000",
-    "$250,001 - $500,000",
-    "$500,001 - $1,000,000",
-    "$1,000,001 - $5,000,000",
-    "$5,000,001 - $25,000,000",
-    "$25,000,001 - $50,000,000",
+    ("1,001", "15,000"),
+    ("15,001", "50,000"),
+    ("50,001", "100,000"),
+    ("100,001", "250,000"),
+    ("250,001", "500,000"),
+    ("500,001", "1,000,000"),
+    ("1,000,001", "5,000,000"),
+    ("5,000,001", "25,000,000"),
+    ("25,000,001", "50,000,000"),
 ]
+# AMOUNT_RANGE_LIST = []
+# BASE_AMOUNT_RANGE_LIST = [
+#     "$1,001 - $15,000",
+#     "$15,001 - $50,000",
+#     "$50,001 - $100,000",
+#     "$100,001 - $250,000",
+#     "$250,001 - $500,000",
+#     "$500,001 - $1,000,000",
+#     "$1,000,001 - $5,000,000",
+#     "$5,000,001 - $25,000,000",
+#     "$25,000,001 - $50,000,000",
+# ]
+# for amt in BASE_AMOUNT_RANGE_LIST:
+#     to_add_list = [
+#         (amt, amt),
+#         (amt.replace("- ", ""), amt),
+#         (amt.replace("- $", ""), amt),
+#         (amt.replace("$", ""), amt),
+#     ]
+#     for obj in to_add_list:
+#         AMOUNT_RANGE_LIST.append(obj)
+
+ACTION_TYPE_LIST = [" S ", " P ", " E ", " S (PARTIAL) "]
+FALLBACK_ACTION_TYPE_LIST = [(" SS ", "S")]
 
 
 def analyze_line(row_content: str) -> dict:
@@ -46,6 +73,14 @@ def analyze_line(row_content: str) -> dict:
         to_return["extra_info"] = extra_info.strip()
     else:
         to_return["extra_info"] = None
+
+    # Some cleaning
+    row_content = row_content.replace("-", " ")
+
+    # Remove starting id
+    if row_content.startswith("20"):
+        first_space_idx = row_content.find(" ")
+        row_content = row_content[first_space_idx + 1 :]
 
     # Get owner
     owner = "SELF"
@@ -66,12 +101,20 @@ def analyze_line(row_content: str) -> dict:
     else:
         to_return["ticker"] = None
 
-    # Special transaction type case
-    transaction_type = None
-    S_PARTIAL_STR = "S (PARTIAL)"
-    if S_PARTIAL_STR in row_content:
-        transaction_type = S_PARTIAL_STR
-        row_content = row_content.replace(S_PARTIAL_STR, "")
+    # Get action type
+    action_type = None
+    for action_str in ACTION_TYPE_LIST:
+        if action_str in row_content:
+            action_type = action_str.strip()
+            row_content = row_content.replace(action_str, " ")
+    if not action_type:
+        for obj in FALLBACK_ACTION_TYPE_LIST:
+            to_test_str, to_replace_str = obj
+            if to_test_str in row_content:
+                action_type = to_replace_str
+                row_content = row_content.replace(to_test_str, " ")
+
+    to_return["action_type"] = action_type
 
     # Find asset type
     asset_type = re.search(r"\[(.*?)\]", row_content)
@@ -84,33 +127,47 @@ def analyze_line(row_content: str) -> dict:
 
     # Find dates
     date_list = re.findall(r"\b\d{1,2}/\d{1,2}/\d{4}\b", row_content)
-    if len(date_list) == 2:
-        to_return["transaction_date"] = date_list[0]
-        to_return["notification_date"] = date_list[1]
+    if len(date_list) >= 2:
+        start_idx = len(date_list) - 2
+        to_return["transaction_date"] = date_list[start_idx]
+        to_return["notification_date"] = date_list[start_idx + 1]
         for date_str in date_list:
             row_content = row_content.replace(date_str, " ")
     else:
         to_return["transaction_date"] = None
         to_return["notification_date"] = None
 
-    # Find amount
-    amount = None
-    for amount_range in AMOUNT_RANGE_LIST:
-        if amount_range in row_content:
-            amount = amount_range
-            row_content = row_content.replace(amount, " ")
-            break
-    to_return["amount"] = amount
-
     # Reformat row_content
     row_content = re.sub(" +", " ", row_content)
     row_content = row_content.strip()
 
-    # Get transaction type
-    if not transaction_type:
-        transaction_type = row_content[-1:]
-        row_content = row_content[:-2]
-    to_return["transaction_type"] = transaction_type
+    # Find amount
+    amount = None
+    for obj in AMOUNT_RANGE_LIST:
+        start_range = obj[0]
+        end_range = obj[1]
+
+        if start_range in row_content and end_range in row_content:
+            amount = start_range + " - " + end_range
+            row_content = row_content.replace(start_range, " ").replace(end_range, " ")
+            break
+
+    if not amount:
+        dollar_sign_list = find_all_in_str(row_content, "\$")
+        if len(dollar_sign_list) == 1:
+            tmp_idx = dollar_sign_list[0][0]
+            next_space_index = row_content.find(" ", tmp_idx)
+            if next_space_index == -1:
+                next_space_index = len(row_content)
+            print(row_content, tmp_idx, next_space_index)
+            amount = row_content[tmp_idx:next_space_index]
+
+    to_return["amount"] = amount
+    row_content = row_content.replace("$", " ")
+
+    # Reformat row_content
+    row_content = re.sub(" +", " ", row_content)
+    row_content = row_content.strip()
 
     to_return["asset_name"] = row_content
     return to_return
@@ -119,8 +176,45 @@ def analyze_line(row_content: str) -> dict:
 EXTRA_INFO_LINE_VAL = "extra_info"
 LINE_SPLIT_VAL = "--new_line--"
 
+COMMON_ERROR_SUBSTRING_DICT = {
+    "CIASS": "CLASS",
+    "SUUBHOLDING": "SUBHOLDING",
+    "PUBLIICC": "PUBLIC",
+    "PUBLIICC": "PUBLIC",
+    "FITINC": "FILING",
+    "FIIINC": "FILING",
+    "FIUINC": "FILING",
+    "FILINC": "FILING",
+    "FIUINE": "FILING",
+    "FITINE": "FILING",
+    "ST|": "ST]",
+    "SUBHOLDING OR": "SUBHOLDING OF",
+    "SUBHOLDING O}": "SUBHOLDING OF",
+    "SUBHOLDING O)": "SUBHOLDING OF",
+    "SUBHOLDING O:": "SUBHOLDING OF",
+    "FIINE STATUS": "FILING STATUS",
+    "S PARTIAL": "S (PARTIAL)",
+    "LOCATTION": "LOCATION",
+    "DESCRRIPTION": "DESCRIPTION",
+    "DEESCRIPTION": "DESCRIPTION",
+    "INE.": "INC.",
+}
+
+
+def should_analyze_content(content: str) -> str:
+    content_lines = content.splitlines()
+    if "FILING ID" in content_lines[0] and "PERIODIC TRANS" in content_lines[1]:
+        return True
+    return False
+
 
 def get_content_lines(content: str) -> list[dict]:
+    if not should_analyze_content(content):
+        return [{"failed": True, "reason": "Not formatted"}]
+
+    for item in COMMON_ERROR_SUBSTRING_DICT.items():
+        content = content.replace(item[0], item[1])
+
     # Try to crop out some lines
     CROP_START_STR_LIST = [
         "GAINS > $200?",
@@ -152,20 +246,29 @@ def get_content_lines(content: str) -> list[dict]:
 
     info_list = []
     extra_info_list = []
-    ENDING_LINE_LIST = ["STATUS: NEW", "SUBHOLDING OF", "DESCRIPTION: ", "COMMENT"]
+    ENDING_LINE_LIST = [
+        "FILING STATUS",
+        "SUBHOLDING OF",
+        "DESCRIPTION",
+        "COMMENT",
+        "LOCATION:",
+    ]
     TABLE_HEADER_LIST = ["OWNER ASSET TRANSACTION", "ID OWNER ASSET TRANSACTION"]
 
+    final_words = []
+    words = content.split(" ")
+    for word in words:
+        if "(" in word and ")" not in word:
+            word = word + ")"
+        final_words.append(word)
+
+    content = " ".join(final_words)
+
+    # Get lines
     for line in content.splitlines():
         line = line.strip()
         if not line:
             continue
-
-        # TODO: Opportunity here to get more data
-        is_ending_line = False
-        for ending_line in ENDING_LINE_LIST:
-            if ending_line in line:
-                is_ending_line = True
-                break
 
         is_header_line = False
         for header_str in TABLE_HEADER_LIST:
@@ -175,16 +278,53 @@ def get_content_lines(content: str) -> list[dict]:
         if is_header_line:
             continue
 
-        if is_ending_line:
-            extra_info_list.append(line)
+        # TODO: Opportunity here to get more data
+        extra_info_content = ""
+        ei_index = -1
+        for test_str in ENDING_LINE_LIST:
+            if test_str in line:
+                match_index = line.find(test_str)
+                if ei_index == -1:
+                    ei_index = match_index
+                else:
+                    if ei_index > match_index:
+                        ei_index = match_index
 
-        else:
+        if ei_index != -1:
+            extra_info_content = line[ei_index:].strip()
+            line = line[:ei_index].strip()
+
+        # Line word counts
+        line_wc = len(line.split(" "))
+        if line_wc < 4:
+            extra_info_content = line + " " + extra_info_content
+            line = ""
+
+        """
+        if whole line is extra info:
+        - Need to append to extra info
+        
+        If partial, both line and extra info:
+        - Flush previous ending line
+        - Add new line
+        - Add ending line to extra info
+        - SPECIAL CASE
+        - If line is 3 words or less, add to extra info instead
+        
+        If only line:
+        - Flush previous extra info
+        - Add new line
+        """
+        if line:
             if len(extra_info_list):
                 to_add = [EXTRA_INFO_LINE_VAL, *extra_info_list, LINE_SPLIT_VAL]
                 info_list += to_add
                 extra_info_list = []
 
             info_list.append(line)
+
+        if extra_info_content:
+            extra_info_list.append(extra_info_content)
 
     # Fix line splits
     info_list = " ".join(info_list).split(LINE_SPLIT_VAL)
@@ -302,25 +442,9 @@ def ocr_img(pil_img):
         # Common errors to fix
         COMMON_ERROR_DICT = {"SS": "S"}
 
-        COMMON_ERROR_SUBSTRING_DICT = {
-            "CIASS": "CLASS",
-            "SUUBHOLDING": "SUBHOLDING",
-            "PUBLIICC": "PUBLIC",
-            "PUBLIICC": "PUBLIC",
-            "FITINC": "FILING",
-            "FIIINC": "FILING",
-            "FIUINC": "FILING",
-            "FILINC": "FILING",
-            "ST|": "ST]",
-        }
-
         for item in COMMON_ERROR_DICT.items():
             if text == item[0]:
                 text = item[1]
-
-        for item in COMMON_ERROR_SUBSTRING_DICT.items():
-            if item[0] in text:
-                text = text.replace(item[0], item[1])
 
         if text:
             extract_obj_list.append((text, (x, y)))
@@ -328,35 +452,20 @@ def ocr_img(pil_img):
     return extract_obj_list
 
 
-def should_analyze_content(content: str) -> str:
-    content_lines = content.splitlines()
-    if "FILING ID" in content_lines[0] and "PERIODIC TRANS" in content_lines[1]:
-        return True
-    return False
-
-
 def analyze_pdf(pdf_file_path):
     image_list = convert_from_path(pdf_file_path)
 
     master_content_list = []
 
-    is_dont_analyze = False
     for i, img_obj in enumerate(image_list):
         extract_obj_list = ocr_img(img_obj)
         raw_content = process_extract_obj_list(extract_obj_list)
-
-        if i == 0 and not should_analyze_content(raw_content):
-            is_dont_analyze = True
-            break
 
         master_content_list.append(raw_content)
 
     master_content = "\n".join(master_content_list)
 
-    if is_dont_analyze:
-        content_lines = [{"failed": True, "reason": "Not formatted"}]
-    else:
-        content_lines = get_content_lines(master_content)
+    content_lines = get_content_lines(master_content)
 
     return (
         content_lines,
@@ -371,11 +480,13 @@ def main():
     parser.add_argument("-s", "--start-index", type=int)
     parser.add_argument("-e", "--end-index", type=int)
     parser.add_argument("--start-year", type=int)
+    parser.add_argument("--end-year", type=int)
     args, _ = parser.parse_known_args()
 
     start_index = args.start_index or 0
     end_index = args.end_index or -1
     start_year = args.start_year or 0
+    end_year = args.end_year or 0
 
     IN_FOLDER_PATH = join(get_out_folder_house(), "documents")
     file_names = listdir(IN_FOLDER_PATH)
@@ -394,6 +505,11 @@ def main():
         if start_year:
             file_year = int(file_name[0:4])
             if file_year < start_year:
+                continue
+
+        if end_year:
+            file_year = int(file_name[0:4])
+            if file_year >= end_year:
                 continue
 
         print("Processing", i, file_name)

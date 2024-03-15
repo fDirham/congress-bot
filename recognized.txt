@@ -1,0 +1,1180 @@
+PerIODIC T rANSACTION r ePOrTClerk of the House of Re
+presentatives • Legislative Resource Center • 135 Cannon Building • Washington, DC 20515f
+Iler INfOrmATIONName:
+Hon. Thomas MacArthur Status:
+Member State/District:
+NJ03 T
+rANSACTIONSID
+Owner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+JT
+ACADIA HEALTHCARE Co INC 05.625% 021523
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Accenture plc Class A ordin aryShares (ACN)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Accenture plc Class A ordin aryShares (ACN)
+ [ST] P05/15/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+ADT CoRP NTS B/E 06.250% 101521
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+AECoM TECHNoLogY C NTS 05.875% 101524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondFiling ID #20009671
+JTAES CoRP B/E 05.500% 041525 [CS]
+S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+AIRCASTLE LTD NTS B/E 04 .125%050124
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ALCoA INC 5.9% 02/01/27  [CS] P 05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ALCoA INC NTS B/E 05.125% 100124
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ALLY FINANIAL INC NTS 08.000% 031520
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+AMC NETWoRKS INC NTS B/E 04.750% 080125
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+AMER AXLE & MANF INC NTS 06.625% 101522
+ [CS] S05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Called corp bondJT
+AMERIgAS PARTNER B/E 05.875% 082026
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+DESCRIPTIoN: Corp bondJT
+AMSURg CoRP NTS B/E 05.625% 071522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ANIXTER INTL INC NTS B/E 05.125% 100121
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ANTERo RESoURCES CoRP 05.625% 060123
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ANTERo RESoURCES FIN 05.375% 110121
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ARAMARK SVCS INC NTS B/E 05.125% 011524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ARCELoRMITTAL 07.250% 030141
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ARCELoRMITTAL B/E 06.125% 060125
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Autodesk, Inc. (ADSK)  [ST] S (partial) 05/11/2018 06/01/2018 $50,001 - $100,000
+gfedcbIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+FILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+B&g FooDS INC B/E 04.625% 060121
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+BALL CoRP NTS B/E 04.375% 121520
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+BERRY PLASTICS CoRP NTS 05.125% 071523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondDC
+Biogen Inc. (BIIB)  [ST] P 05/02/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo Isabella MacArthurDC
+Biogen Inc. (BIIB)  [ST] P 05/02/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo David MacArthurJT
+BLUE CUBE SPINCo INC NTS 10.000% 101525
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+BoYD gAMINg CoRP NTS B/E 06.875% 051523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Broadcom Inc. (AVgo)  [ST] S (partial) 05/11/2018 06/01/2018 $50,001 - $100,000
+gfedcbF
+ILINg S TATUS: NewIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+SUBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+CBS oUTDooR AMERICAS 05.625% 021524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CCo HLDgS LLC/CAP CoRP 05.125% 021523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CCo HLDgS LLC/CAP CoRP 05.750% 090123
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CCo HLDgS LLC/CAP CoRP 05.750% 090123
+ [CS] P05/09/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CDW LLC / CDW FIN CoRP 05.500% 120124
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CEDAR FAIR L P NTS B/E 05.375% 060124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CENTURYLINK INC NTS B/E 07.500% 040124
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CF INDUSTRIES INC NTS 03.450% 060123
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+FILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CHEMoURS Co LLC NTS B/E 06.625% 051523
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CHENIERE CoRP CHRISTI HD 05.875% 033125
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Chevron Corporation (CVX)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+CINEMARK INC NTS B/E 0 4.875%060123
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CIT gRoUP INC B/E 05.000% 080123
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CLEAR CHANNEL WW HLDgS 06.500% 111522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CLEARWATER PAPER B/E 04.500% 020123
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CNo FINL gRoUP INC B/E P 05/22/2018 06/01/2018 $15,001 - gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+05.250% 053025 [CS] $50,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Colgate-Palmolive Company (CL) [ST]
+S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Comcast Corporation - Cl ass A(CMCSA)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+CoNCHo RESoURCES INC NTS 04.375% 011525
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CoNSoL ENERgY INC 05.875% 041522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CoVANTA HLDg CoRP 05.875% 030124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Crane Company (CR)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+CRESTWooD MIDSTREAM 06.250% 040123
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CRoWN AMER CAP CoRP NTS 04.500% 011523
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+FILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CSC HLDgS INC 07.625% 071518 [CS]
+S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CSC HLDgS INC NTS 06.750% 111521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+CYRUSoNE LP NTS B/E 05.000% 031524
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DAVITA HEALTHCARE PARTNE 05.125% 071524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DAVITA INC NTS B/E 05.750% 081522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DCP MIDSTREAM oPERATINg 03.875% 031523
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DELL INC 04.625% 040121  [CS] P 05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTDIAMoND oFFSHoRE DRILL 07.875% 081525
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DIAMoNDBACK ENERgY INC 04.750% 110124
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DIAMoNDBACK ENERgY INC 05.375% 053125
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DISH DBS CoRP NTS B/E 05.875% 071522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DISH DBS CoRP NTS B/E 07.875% 090119
+ [CS] S (partial)05/08/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+DISH DBS CoRP NTS B/E 07.875% 090119
+ [CS] S05/09/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+EMBARQ CoRP MW+40BP NTS 07.995% 060136
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ENERgY TRANSFER EQUITY 05.875% 011524
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+SUBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ENSCo PLC NTS B/E 05.750% 100144
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+EQUINIX INC B/E 05.750% 010125
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+FREEPoRT-MCMoRAN CoPPER 03.875% 031523
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+FREEPoRT-MCMoRAN CoPPER 05.450% 031543
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+gANNETT Co INC NTS B/E 06.375% 101523
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+gLP CAP L P / gLP FINg 05.375% 041526
+ [CS] P05/29/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+gooDYEAR TIRE & RUBBER 04.875% 031527
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTgRAPHIC PACKAgINg INTL 04.750% 041521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+HCA INC NTS B/E 03.750% 031519 [CS]
+S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+HILToN DoMESTIC oPER Co 04.250% 090124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+HILToN gRAND VACA LLC 06.125% 120124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Home Depot, Inc. (HD)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Intel Corporation (INTC)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+INTL LEASE FIN CoRP NTS 08.250% 121520
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondDC
+Invesco S&P 500 Equal We ight ETF(RSP)
+ [ST] S (partial)05/29/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Isabella MacArthurJT
+IRoN MTN INC B/E 05.750% S 05/21/2018 06/01/2018 $15,001 - gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+081524 [CS] $50,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ISTAR FINANCIAL INC NTS 05.000% 070119
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ISTAR INC NTS B/E 06.500% 070121
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Johnson & Johnson (JNJ)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+KENNEDY-WILSoN INC MTN 05.875% 040124
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+L BRANDS INC NTS B/E 05.625% 101523
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+LAMAR MEDIA CoRP NTS B/E 05.000% 050123
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+LENNAR CoRP B/E 04.750% 053025
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTLENNAR CoRP CALL@MW+50BP 04.500% 061519
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+LEUCADIA NATL CoRP B/E 05.500% 101823
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+LEVEL 3 CoMM INC NTS B/E 05.750% 120122
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+LKQ CoRP NTS B/E 04.750% 051523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Lockheed Martin Corporation (LMT)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+M/I HoMES INC NTS B/E 05.625% 080125
+ [CS] P05/23/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+MASCo CoRP B/E 05.950% 031522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+MASTEC INC NTS 04.875% 0 31523[CS]
+P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+DESCRIPTIoN: Corp bondJT
+MASTEC INC NTS 04.875% 0 31523[CS]
+P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+McDonald's Corporation (MC D)[ST]
+S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Medtronic plc. ordinary Shares (MDT)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+MERITAgE HoMES CoRP 05.125% 060627
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+MgIC INVMT CoRP NTS B/E 05.750% 081523
+ [CS] S05/21/2018 06/01/2018 $50,001 - $100,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+MgM RESoRTS INTL NTS B/E 06.750% 100120
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Microsoft Corporation (MSFT)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Mitsubishi Estate Co Ltd American Depositary Shares (MITEY)
+ [ST] S (partial)05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTMitsubishi Estate Co Ltd American Depositary Shares (MITEY)
+ [ST] S (partial)05/23/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Mitsubishi Estate Co Ltd American Depositary Shares (MITEY)
+ [ST] S05/24/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+MPT oPER PARTNERSHIP NTS 05.250% 080126
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+MURPHY oIL CoRP NTS B/E 06.875% 081524
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NABoRS INDUSTRIES INC 04.625% 091521
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NATIoNSTAR MoRTgAgE LLC 06.500% 070121
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NATIoNSTAR MoRTgAgE LLC 06.500% 080118
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NATIoNSTAR MoRTgAgE LLC 09.625% 050119
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTNCR CoRP NTS B/E 05.000% 071522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NETFLIX INC NTS B/E 05.500% 021522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NEW JERSEY HEALTH CARE F SR A RV BE/R/ 5 DUE 070131
+ [gS] P05/18/2018 06/01/2018 $50,001 - $100,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+NEWFIELD EXPLoRATIoN Co 05.625% 070124
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NextEra Energy, Inc. (NEE)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+NoKIA CoRP B/E 04.375% 061227[CS]
+P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Novartis Ag (NVS)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+NRg ENERgY INC NTS B/E 07.250% 051526
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NRg YIELD oPERATINg LLC S 05/21/2018 06/01/2018 $1,001 - $15,000 gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+05.375% 081524 [CS] gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+NUANCE CoMMUNICATIoNS 05.625% 121526
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondDC
+Nuance Communications, Inc. (NUAN)
+ [ST] P05/10/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo Isabella MacArthurJT
+Nuance Communications, Inc. (NUAN)
+ [ST] P05/10/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurDC
+nVent Electric plc ordinary Shares (NVT)
+ [ST] E05/01/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo David MacArthurD
+ESCRIPTIoN: Shares received in spinoff from Pentair PLC (PNR)JT
+nVent Electric plc ordinary Shares (NVT)
+ [ST] E05/01/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Shares received in spinoff from Pentair PLC (PNR)DC
+nVent Electric plc ordinary Shares (NVT)
+ [ST] E05/01/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo Isabella MacArthurD
+ESCRIPTIoN: Shares received in spinoff from Pentair PLC (PNR)JT
+oCEANEERINg INTL INC NTS 04.650% 111524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTPanasonic Corporation  (PCRFY)[ST]
+S (partial)05/14/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Panasonic Corporation  (PCRFY)[ST]
+S (partial)05/15/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Panasonic Corporation  (PCRFY)[ST]
+S (partial)05/16/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Panasonic Corporation  (PCRFY)[ST]
+S05/17/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+PENSKE AUTo gRoUP INC 05.375% 120124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+PINNACLE FooD FI NTS B/E 05.875% 011524
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Praxair, Inc. (PX)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+PRECISIoN DRILLINg CoRP 05.250% 111524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+PTC INC NTS B/E 06.000% 051524 [CS]
+P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+SUBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+PULTEgRoUP INC B/E 05.500% 030126
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+QEP RESoURCES INC NTS 05.625% 030126
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+QoRVo INC NTS B/E 07.000% 120125
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+RADIAN gRoUP INC NTS B/E 04.500% 100124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+RANgE RESoURCES CoRP NTS 04.875% 051525
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+REYNoLDS gRoUP ISSUER 05.750% 101520
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+RITE AID CoRP NTS B/E 06.750% 061521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTRockwell Automation, Inc.  (RoK)[ST]
+S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+RoWAN CoMPANIES INC B/E 4.875% 060122
+ [CS] S05/21/2018 06/01/2018 $50,001 - $100,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+RoYAL BK SCoTLND gRP PLC 06.125% 121522
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+RoYAL CARIBBEAN CRUISES 05.250% 111522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SABINE PASS LIQUEFACTIoN 05.625% 030125
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SBA CoMM CoRP NTS B/E 04.875% 071522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SBA CoMM CoRP NTS B/E 04.875% 090124
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SCoTTS MIRACLE-gRo Co 05.250% 121526
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+DESCRIPTIoN: Corp bondJT
+SESI L L C NTS B/E 07.125% 121521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SLM CoRP CALL@MW+50BP 05.500% 011519
+ [CS] S05/09/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SLM CoRP CALL@MW+50BP 05.500% 011519
+ [CS] S (partial)05/08/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SoWSTN ENERgY Co B/E 07.750% 100127
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SPDR Select Sector Fund - Financial (XLF)
+ [ST] S (partial)05/11/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+SPECTRUM BRANDS INC NTS 05.750% 071525
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SPRINgLEAF FIN CoRP NTS 08.250% 121520
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SPRINT CoRP NTS B/E 11.500% 111521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+FILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+STANDARD PAC CoRP NEW 08.375% 051518
+ [CS] S05/15/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Called corp bondJT
+STARWooD PPTY TR INC NTS 05.000% 121521
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+STEEL DYNAMICS INC NTS 05.250% 041523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SUMMIT MATLS LLC/FIN NTS 06.125% 071523
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+SUMMIT MIDSTREAM HLDgS 05.750% 041525
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Suncor Energy Inc. (SU)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+SVC CoRP INTL NTS B/E 05.375% 051524
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TARgA RESoURCES PARTNERS P 05/22/2018 06/01/2018 $15,001 - gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+05.250% 050123 [CS] $50,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Tata Motors Ltd Tata Motors Limited (TTM)
+ [ST] S05/16/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Tata Motors Ltd Tata Motors Limited (TTM)
+ [ST] S (partial)05/15/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+TECK CoMINCo LTD NTS 06.125% 100135
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TECK RESoURCES LTD B/E 03.750% 020123
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TELECoM ITALIA 07.721% 060438
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TELEFLEX INC NTS B/E 04.6 25%111527
+ [CS] S05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TEMPUR SEALY INTL INC 05.500% 061526
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTTENET HEALTHCARE CoRP 04.500% 040121
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+Texas Instruments Incorporated(TXN)
+ [ST] P05/21/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Texas Instruments Incorporated(TXN)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+ToLL BRoS FIN CoRP B/E 04.875% 031527
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TRANSDIgM INC NTS B/E 06.000% 071522
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TRANSMoNTAIgNE PARTNERS 06.125% 021526
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TRANSoCEAN INC MW@ +40BP 06.800% 031538
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+TRIBUNE MEDIA Co NTS B/E 05.875% 071522
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+JTTwitter, Inc. (TWTR)  [ST] S (partial) 05/11/2018 06/01/2018 $50,001 - $100,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+Union Pacific Corporatio n (UNP)[ST]
+S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+UNIT CoRP 06.625% 051521  [CS] P 05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+UNITED CoNTL HLDgS NTS 05.000% 020124
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+UNITED RENTALS NoRTH AM 05.500% 051527
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+United Technologi es Corporation(UTX)
+ [ST] S (partial)05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+UnitedHealth group Incorporated Common Stock (UNH)
+ [ST] S (partial)05/11/2018 06/01/2018 $15,001 - $50,000
+gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurDC
+UnitedHealth group Incorporated Common Stock (UNH)
+ [ST] S (partial)05/01/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewS
+UBHoLDINg o F: MacArthur Family 2008 Irr Tr FBo David MacArthurJT
+V.F. Corporation (VFC)  [ST] S (partial) 05/11/2018 06/01/2018 $1,001 - $15,000 gfedcbF
+ILINg S TATUS: NewIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+SUBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+VALVoLINE INC NTS B/E 05.500% 071524
+ [CS] S05/10/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+VERISIgN INC B/E 04.625% 050123
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+VIACoM INC B/E 05.875% 022857[CS]
+P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+VIDEoTRoN LTEE NTS B/E 05.000% 071522
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+WASHINgToN ST FoR ISSUES A- 1 BE/R/ 5 DUE 080133
+ [gS] P05/08/2018 06/01/2018 $100,001 - $250,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurJT
+WELLCARE HEALTH PLANS 05.250% 040125
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+WESCo DISTR INC NTS B/E 05.375% 061524
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+WESTERN DIgITAL CoRP NTS 04.750% 021526
+ [CS] P05/22/2018 06/01/2018 $1,001 - $15,000 gfedcIDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
+
+FILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+WEYERHAEUSER REAL EST Co 05.875% 061524
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+WILLIAMS CoS INC B/E 04 .550%062424
+ [CS] P05/22/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bondJT
+ZAYo gRoUP LLC/ZAYo CPTL 06.000% 040123
+ [CS] S05/21/2018 06/01/2018 $15,001 - $50,000
+gfedcF
+ILINg S TATUS: NewS
+UBHoLDINg o F: Thomas C MacArthur and Deborah A MacArthurD
+ESCRIPTIoN: Corp bond* For the complete list of asset type abbreviations, pl
+ease visit https://fd.house.gov/reference/ asset-type-codes.aspx. A
+SSeT ClASS DeTAIlSIsabella MacArthur (owner: DC)
+L
+oCATIoN: USMacArthur Family 2008 Irr Tr FBo 
+David MacArthur (owner: DC)MacArthur Family 2008 Irr Tr FBo 
+Isabella MacArthur (owner: DC)Thomas C MacArthur a
+nd Deborah A MacArthur (owner: JT)L
+oCATIoN: USI
+NITIAl P ublIC O fferINGSn
+mlkj Yes nmlkji NoC
+erTIfICATION AND SIGNATureg
+fedcb I CERTIFY that the statements I have made on the attached Periodic Transaction Report are true, complete, and correct to thebest of my knowledge a
+nd belief.Digitally Signed: 
+Hon. Thomas MacArthur , 06/05/2018 IDOwner Asset Transaction Type
+DateNotification Date
+AmountCap. Gains >
+$200?
