@@ -1,9 +1,18 @@
 import "dotenv/config";
+import { join } from "path";
 
 export function getOutFolderHouse() {
-  return process.env.OUT_FOLDER_HOUSE;
+  return join(getOutFolder(), "house");
 }
 
 export function getOutFolderSenate() {
-  return process.env.OUT_FOLDER_SENATE;
+  return join(getOutFolder(), "senate");
+}
+
+export function getOutFolderAnalysis() {
+  return join(getOutFolder(), "analysis");
+}
+
+export function getOutFolder() {
+  return process.env.OUT_FOLDER;
 }

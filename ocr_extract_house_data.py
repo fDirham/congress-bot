@@ -99,8 +99,9 @@ def analyze_line(row_content: str) -> dict:
     asset_type = re.search(r"\[(.*?)\]", row_content)
     if asset_type:
         asset_type_val = asset_type.group(1)
-        to_return["asset_type"] = asset_type_val
-        row_content = row_content.replace("[" + asset_type_val + "]", " ")
+        if not "/" in asset_type_val:
+            to_return["asset_type"] = asset_type_val
+            row_content = row_content.replace("[" + asset_type_val + "]", " ")
     else:
         to_return["asset_type"] = None
 
