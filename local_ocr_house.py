@@ -148,12 +148,30 @@ def main():
 
         # Correct and sort image
         cng_save_path = join(CNG_FOLDER_PATH, file_name.replace(".pdf", "")) + ".json"
+        cng_obj = None
         if not is_skip_cng:
-            cng_res = cng(raw_content_list)
+            row_list, failed_page_list = cng(raw_content_list)
+            cng_obj = {
+                "num_rows": len(row_list),
+                "failed_page_list": failed_page_list,
+                "row_list": row_list,
+            }
+
             with open(cng_save_path, "w", encoding="utf-8") as outfile:
-                outfile.write(json.dumps(cng_res, indent=4))
+                outfile.write(json.dumps(cng_obj, indent=4))
         else:
-            pass
+            with open(cng_save_path, "r") as in_file:
+                content = in_file.read()
+                cng_obj: dict = json.loads(content)
+
+        # Extract info
+        info_extract_res = extract_info(cng_obj)
+        info_extract_save_path = join(
+            INFO_EXTRACT_FOLDER_PATH, file_name.replace(".pdf", ".json")
+        )
+
+        with open(info_extract_save_path, "w", encoding="utf-8") as outfile:
+            outfile.write(json.dumps(info_extract_res, indent=4))
 
         print("Analysis complete", i, file_name)
 
@@ -196,10 +214,20 @@ def ocr_img(pil_img):
     for cnt in contours:
         x, y, w, h = cv2.boundingRect(cnt)
 
+        # Cropping the text block for giving input to OCR
+        padding = 3
+        h += 2 * padding
+        w += 2 * padding
+        x -= padding
+        if x < 0:
+            x = 0
+        y -= padding
+        if y < 0:
+            y = 0
+
         # Drawing a rectangle on copied image
         cv2.rectangle(im2, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-        # Cropping the text block for giving input to OCR
         cropped = im2[y : y + h, x : x + w]
 
         # Apply OCR on the cropped image
@@ -237,6 +265,7 @@ ERROR_SUBSTRING_DICT = {
     "SUUBHOLDING": "SUBHOLDING",
     "PUBLIICC": "PUBLIC",
     "PUBLIICC": "PUBLIC",
+    "PUSBIIC": "PUBLIC",
     "FITINC": "FILING",
     "FIIINC": "FILING",
     "FIUINC": "FILING",
@@ -244,6 +273,7 @@ ERROR_SUBSTRING_DICT = {
     "FIUINE": "FILING",
     "FITINE": "FILING",
     "FILINGC": "FILING",
+    "FININC": "FILING",
     "SUBHOLDING OR": "SUBHOLDING OF",
     "SUBHOLDING O}": "SUBHOLDING OF",
     "SUBHOLDING O)": "SUBHOLDING OF",
@@ -253,7 +283,42 @@ ERROR_SUBSTRING_DICT = {
     "DESCRRIPTION": "DESCRIPTION",
     "DEESCRIPTION": "DESCRIPTION",
     "INE.": "INC.",
+    " PLE ": " PLC ",
+    "(OFFERINGS": "OFFERINGS",
 }
+
+
+def clean_text(in_text: str):
+    to_return = ""
+    ALLOWED_CHARS = ["(", ")", "[", "]", " ", "|", "'", "/", "$", ".", "-"]
+    for char in in_text:
+        if char.isalnum():
+            to_return += char
+        elif char in ALLOWED_CHARS:
+            to_return += char
+
+    return to_return
+
+
+def fix_closing_chars(in_text: str):
+    in_text = in_text.replace("[", "|").replace("]", "|")
+    in_text = re.sub(r"\|+", "|", in_text)
+    in_text = in_text.replace("|", " | ")
+
+    in_text = re.sub(r"\(+", "(", in_text)
+    in_text = re.sub(r"\)+", ")", in_text)
+    return in_text
+
+
+def combine_group_to_string(in_row: list[dict]) -> str:
+    to_return = ""
+    for text_obj in in_row:
+        to_add = text_obj["text"]
+        if not to_return.endswith(to_add):
+            to_return += " " + to_add
+
+    to_return = to_return.strip()
+    return to_return
 
 
 def cng(raw_content_list: list[list[dict]]):
@@ -262,7 +327,7 @@ def cng(raw_content_list: list[list[dict]]):
 
     to_return_row_list = []
     failed_page_list = []
-    for i, page_list in enumerate(raw_content_list):
+    for page_num, page_list in enumerate(raw_content_list):
 
         # Fix text
         page_fixed_list = []
@@ -271,12 +336,13 @@ def cng(raw_content_list: list[list[dict]]):
             new_text = new_text.upper()
 
             # Standardize []
-            new_text = new_text.replace("[", "|").replace("]", "|")
-            new_text = re.sub(r"\|+", "|", new_text)
+            new_text = fix_closing_chars(new_text)
+            new_text = new_text.replace("\n", " ")
+            new_text = clean_text(new_text)
 
             # Remove newlines
-            new_text = new_text.replace("\n", " ")
             new_text = re.sub(" +", " ", new_text)
+            new_text = new_text.strip()
 
             # Error full strings
             if ERROR_FULL_STRING_DICT.get(new_text):
@@ -317,6 +383,29 @@ def cng(raw_content_list: list[list[dict]]):
             tmp_list.append(to_add)
         hor_line_list = tmp_list
 
+        # Filter some lines out
+        START_CROP_SUBSTRING_LIST = ["TRANSACTIONS"]
+        END_CROP_SUBSTRING_LIST = [
+            "COMPLETE LIST OF ASSET TYPE ABBREVIATIONS",
+            "ASSET CLASS DETA",
+        ]
+        start_idx = 0
+        end_idx = len(hor_line_list)
+
+        for line_idx, hor_line in enumerate(hor_line_list):
+            combined_line = combine_group_to_string(hor_line)
+            for substr in START_CROP_SUBSTRING_LIST:
+                if substr in combined_line:
+                    start_idx = line_idx
+                    continue
+            for substr in END_CROP_SUBSTRING_LIST:
+                if substr in combined_line:
+                    if line_idx < end_idx:
+                        end_idx = line_idx
+                    continue
+
+        hor_line_list = hor_line_list[start_idx:end_idx]
+
         # Get interesting lines
         header_line = None
         interesting_lines = []
@@ -325,7 +414,7 @@ def cng(raw_content_list: list[list[dict]]):
         for hor_line in hor_line_list:
             is_interesting = len(hor_line) >= INTERESTING_LINES_MIN_OBJECT_COUNT
             if is_interesting:
-                combined_line = " ".join([obj["text"] for obj in hor_line])
+                combined_line = combine_group_to_string(hor_line)
 
                 is_header = IS_HEADER_LINE_SUBSTRING in combined_line
 
@@ -336,7 +425,7 @@ def cng(raw_content_list: list[list[dict]]):
                     interesting_lines.append(hor_line)
 
         if not header_line:
-            failed_page_list.append(i)
+            failed_page_list.append(page_num)
             continue
 
         # Determine row y coords
@@ -369,7 +458,7 @@ def cng(raw_content_list: list[list[dict]]):
 
             row_list.append(curr_row)
 
-        # TODO: Use header info to segment row list to cells
+        # Use header info to segment row list to cells
         column_start_x_list = []
         for text_obj in header_line:
             x_coord = text_obj["x"]
@@ -385,6 +474,10 @@ def cng(raw_content_list: list[list[dict]]):
             for text_obj in row:
                 obj_x = text_obj["x"]
                 col_name = None
+
+                # Add page to text_obj
+                text_obj["page_num"] = page_num
+
                 for j, col_obj in enumerate(column_start_x_list):
                     col_x = col_obj["x"]
                     col_start = col_x - COL_X_RANGE
@@ -410,25 +503,94 @@ def cng(raw_content_list: list[list[dict]]):
 
         to_return_row_list += row_list
 
-    return to_return_row_list
+    return to_return_row_list, failed_page_list
 
 
-OWNER_PREFIX_LIST = ["JT", "DC", "SP"]
-
-AMOUNT_RANGE_LIST = [
-    ("1,001", "15,000"),
-    ("15,001", "50,000"),
-    ("50,001", "100,000"),
-    ("100,001", "250,000"),
-    ("250,001", "500,000"),
-    ("500,001", "1,000,000"),
-    ("1,000,001", "5,000,000"),
-    ("5,000,001", "25,000,000"),
-    ("25,000,001", "50,000,000"),
+VALID_OWNER_LIST = ["JT", "DC", "SP"]
+DESC_START_LINE_LIST = [
+    "FILING STATUS",
+    "SUBHOLDING OF",
+    "DESCRIPTION",
+    "COMMENT",
+    "LOCATION:",
 ]
 
-ACTION_TYPE_LIST = [" S (PARTIAL) ", " S ", " P ", " E "]
-FALLBACK_ACTION_TYPE_LIST = [(" SS ", "S")]
+
+def extract_info(in_cng_obj: dict):
+    to_return_extract_info_list = []
+    row_list: list[dict] = in_cng_obj["row_list"]
+    for row_obj in row_list:
+        owner_val = None
+        owner_col: list | None = row_obj.get("OWNER")
+        if owner_col:
+            owner_val = owner_col[0]["text"]
+            if owner_val not in VALID_OWNER_LIST:
+                owner_val = None
+
+        asset_name_val = None
+        asset_desc_val = None
+        ticker_val = None
+        asset_type_val = None
+        asset_desc_col: list | None = row_obj.get("ASSET")
+        if asset_desc_col:
+            combined_line = combine_group_to_string(asset_desc_col)
+            desc_start_idx = -1
+            for start_substr in DESC_START_LINE_LIST:
+                tmp_idx = combined_line.find(start_substr)
+                if desc_start_idx == -1 or (tmp_idx > -1 and tmp_idx < desc_start_idx):
+                    desc_start_idx = tmp_idx
+
+            if desc_start_idx == -1:
+                asset_name_val = combined_line
+            else:
+                asset_name_val = combined_line[0:desc_start_idx].strip()
+                asset_desc_val = combined_line[desc_start_idx:].strip()
+
+            # Get ticker
+            ticker = re.search(r"\((.*?)\)", asset_name_val)
+            if ticker:
+                ticker_val = ticker.group(1)
+
+            # Get asset type
+            asset_type = re.search(r"\| (.*?) \|", asset_name_val)
+            if asset_type:
+                asset_type_val = asset_type.group(1)
+                asset_type_val = asset_type_val.replace("|", "").strip()
+
+        tx_type_val = None
+        tx_type_col: list | None = row_obj.get("TRANSACTION")
+        if tx_type_col:
+            tx_type_val = tx_type_col[0]["text"]
+
+        tx_date_val = None
+        tx_date_col: list | None = row_obj.get("DATE")
+        if tx_date_col:
+            tx_date_val = tx_date_col[0]["text"]
+
+        notif_date_val = None
+        notif_date_col: list | None = row_obj.get("NOTIFICATION")
+        if notif_date_col:
+            notif_date_val = notif_date_col[0]["text"]
+
+        amount_val = None
+        amount_col: list | None = row_obj.get("AMOUNT")
+        if amount_col:
+            amount_val = amount_col[0]["text"]
+
+        to_add = {
+            "asset_name": asset_name_val,
+            "ticker": ticker_val,
+            "asset_type": asset_type_val,
+            "tx_type": tx_type_val,
+            "owner": owner_val,
+            "tx_date": tx_date_val,
+            "notif_date": notif_date_val,
+            "amount": amount_val,
+            "asset_desc": asset_desc_val,
+        }
+        to_return_extract_info_list.append(to_add)
+
+    return to_return_extract_info_list
 
 
 EXTRA_INFO_LINE_VAL = "extra_info"
@@ -452,13 +614,7 @@ CROP_END_STR_LIST = [
     "INITIAL PUBLIC OFFER",
     "ASSET CLASS DETA",
 ]
-ENDING_LINE_LIST = [
-    "FILING STATUS",
-    "SUBHOLDING OF",
-    "DESCRIPTION",
-    "COMMENT",
-    "LOCATION:",
-]
+
 TABLE_HEADER_LIST = ["OWNER ASSET TRANSACTION", "ID OWNER ASSET TRANSACTION"]
 
 

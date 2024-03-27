@@ -17,5 +17,9 @@ def get_out_folder_senate() -> str:
     return join(get_out_folder(), "senate")
 
 
+def get_out_folder_capitol_trades() -> str:
+    return join(get_out_folder(), "capitol_trades")
+
+
 def get_out_folder_analysis() -> str:
     return join(get_out_folder(), "analysis")

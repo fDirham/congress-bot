@@ -1,6 +1,8 @@
 from os import listdir, remove
 from os.path import join, isfile
 import re
+from os import mkdir, listdir, remove
+from os.path import isdir, join, isfile
 
 
 def get_percentage_string(curr_idx, start_idx, last_idx):
@@ -31,3 +33,20 @@ def find_all_in_str(text: str, to_find: str):
         to_return.append((m.start(), m.end()))
 
     return to_return
+
+
+pattern_camel_to_snake = re.compile(r"(?<!^)(?=[A-Z])")
+
+
+def camel_to_snake_case(in_str: str):
+    return pattern_camel_to_snake.sub("_", in_str).lower()
+
+
+def mkdir_if_not_exists(in_dir: str | list[str]):
+    if isinstance(in_dir, str):
+        if not isdir(in_dir):
+            mkdir(in_dir)
+    elif isinstance(in_dir, list):
+        for dirstr in in_dir:
+            if not isdir(dirstr):
+                mkdir(dirstr)
