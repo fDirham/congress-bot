@@ -8,10 +8,10 @@ from os.path import join
 from custom_helpers_py.utilities import (
     get_percentage_string,
     remove_non_alphanumeric,
-    find_all_in_str,
     mkdir_if_not_exists,
 )
 from custom_helpers_py.img_helpers import convert_pil_to_opencv_img
+from custom_helpers_py.get_paths import get_out_folder_house
 from pdf2image import convert_from_path
 import argparse
 from shutil import rmtree
@@ -21,8 +21,8 @@ from shutil import rmtree
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 
-IN_FOLDER_PATH = "./tmp/test_pdfs/"
-OUT_FOLDER_PATH = "./tmp/ocr_extract_out/"
+IN_FOLDER_PATH = join(get_out_folder_house(), "documents")
+OUT_FOLDER_PATH = join(get_out_folder_house(), "ocr_out")
 
 RAW_CONTENT_FOLDER_PATH = join(OUT_FOLDER_PATH, "raw_content")
 PROCESSED_IMAGES_FOLDER_PATH = join(OUT_FOLDER_PATH, "processed_images")
@@ -79,9 +79,6 @@ def main():
 
     to_process_file_list: list[str] = []
     for i, file_name in enumerate(raw_file_names):
-        if i < start_index or i >= end_index:
-            continue
-
         if start_year:
             file_year = int(file_name[0:4])
             if file_year < start_year:
@@ -99,11 +96,13 @@ def main():
         to_process_file_list.append(file_name)
 
     to_process_file_list.sort()
-    for i, file_name in enumerate(to_process_file_list):
-        print("Processing", i, file_name)
-        file_path = join(IN_FOLDER_PATH, file_name)
-
+    for file_idx, file_name in enumerate(to_process_file_list):
         # Convert pdf to image
+        if file_idx < start_index or file_idx >= end_index:
+            continue
+
+        print("Processing", file_idx, file_name)
+        file_path = join(IN_FOLDER_PATH, file_name)
 
         # OCR image
         raw_content_list = []
@@ -173,9 +172,9 @@ def main():
         with open(info_extract_save_path, "w", encoding="utf-8") as outfile:
             outfile.write(json.dumps(info_extract_res, indent=4))
 
-        print("Analysis complete", i, file_name)
+        print("Analysis complete", file_idx, file_name)
 
-        pct = get_percentage_string(i + 1, 0, len(to_process_file_list))
+        pct = get_percentage_string(file_idx + 1, 0, len(to_process_file_list))
         print(pct)
 
 

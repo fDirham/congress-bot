@@ -1,8 +1,7 @@
-from os import listdir, remove
-from os.path import join, isfile
+from os import listdir, remove, mkdir
+from os.path import join, isfile, isdir
 import re
-from os import mkdir, listdir, remove
-from os.path import isdir, join, isfile
+import json
 
 
 def get_percentage_string(curr_idx, start_idx, last_idx):
@@ -50,3 +49,10 @@ def mkdir_if_not_exists(in_dir: str | list[str]):
         for dirstr in in_dir:
             if not isdir(dirstr):
                 mkdir(dirstr)
+
+
+def read_json_file(file_path: str):
+    f = open(file_path)
+    data = json.load(f)
+    f.close()
+    return data
