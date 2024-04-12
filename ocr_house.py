@@ -317,6 +317,9 @@ def combine_group_to_string(in_row: list[dict]) -> str:
             to_return += " " + to_add
 
     to_return = to_return.strip()
+    to_return = to_return.removeprefix("|")
+    to_return = to_return.strip()
+
     return to_return
 
 
@@ -546,12 +549,12 @@ def extract_info(in_cng_obj: dict):
                 asset_desc_val = combined_line[desc_start_idx:].strip()
 
             # Get ticker
-            ticker = re.search(r"\((.*?)\)", asset_name_val)
+            ticker = re.search(r"(?s:.*)\((.*?)\)", asset_name_val)
             if ticker:
                 ticker_val = ticker.group(1)
 
             # Get asset type
-            asset_type = re.search(r"\| (.*?) \|", asset_name_val)
+            asset_type = re.search(r"(?s:.*)\| (.*?) \|", asset_name_val)
             if asset_type:
                 asset_type_val = asset_type.group(1)
                 asset_type_val = asset_type_val.replace("|", "").strip()
